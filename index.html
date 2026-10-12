@@ -27,7 +27,7 @@
     :root {
       --ink: #111111;
       --ink-soft: #1c1c1c;
-      --yellow: #F3E733;
+      --yellow: #2463EB;
       --gray: #5c5c5c;
       --gray-light: #8a8a8a;
       --line: #e7e6e1;
@@ -62,7 +62,7 @@
       right: -100px;
       width: 550px;
       height: 550px;
-      background: radial-gradient(circle, rgba(243, 231, 51, 0.22), rgba(245, 158, 11, 0.08), transparent 70%);
+      background: radial-gradient(circle, rgba(36, 99, 235, 0.20), rgba(29, 78, 216, 0.08), transparent 70%);
       pointer-events: none;
       z-index: 0;
       filter: blur(40px);
@@ -74,7 +74,7 @@
       left: -100px;
       width: 550px;
       height: 550px;
-      background: radial-gradient(circle, rgba(66, 133, 244, 0.12), rgba(243, 231, 51, 0.12), transparent 70%);
+      background: radial-gradient(circle, rgba(66, 133, 244, 0.12), rgba(36, 99, 235, 0.12), transparent 70%);
       pointer-events: none;
       z-index: 0;
       filter: blur(40px);
@@ -119,8 +119,8 @@
     }
     .btn-dark { background: var(--ink); color: #fff; }
     .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,.22); background: #000; }
-    .btn-yellow { background: var(--yellow); color: var(--ink); font-weight: 700; box-shadow: 0 8px 24px rgba(243,231,51,0.3); }
-    .btn-yellow:hover { background: var(--ink); color: var(--yellow); transform: translateY(-2px); }
+    .btn-yellow { background: var(--yellow); color: #ffffff; font-weight: 700; box-shadow: 0 8px 24px rgba(36, 99, 235, 0.35); }
+    .btn-yellow:hover { background: #1d4ed8; color: #ffffff; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(36, 99, 235, 0.45); }
 
     /* Header Liquid Glass Navigation */
     header.nav {
@@ -182,8 +182,8 @@
     }
     #results .stat .lbl {
       color: var(--yellow) !important;
-      background: rgba(243, 231, 51, 0.12) !important;
-      border: 1px solid rgba(243, 231, 51, 0.3) !important;
+      background: rgba(36, 99, 235, 0.12) !important;
+      border: 1px solid rgba(36, 99, 235, 0.3) !important;
     }
 
     .svc:hover, article:hover, #tst-track > div:hover {
@@ -203,8 +203,8 @@
     .svc-pill.active, .pill.active {
       background: var(--yellow) !important;
       border-color: var(--yellow) !important;
-      color: var(--ink) !important;
-      box-shadow: 0 6px 20px rgba(243, 231, 51, 0.35) !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(36, 99, 235, 0.35) !important;
     }
     .nav .row { display: flex; align-items: center; justify-content: space-between; height: 74px; }
     .nav .logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; tracking-tight; }
@@ -241,7 +241,7 @@
       top: -120px;
       width: 440px;
       height: 440px;
-      background: radial-gradient(circle, rgba(243,231,51,.20), transparent 65%);
+      background: radial-gradient(circle, rgba(36,99,235,.20), transparent 65%);
       pointer-events: none;
     }
     .hero .wrap { position: relative; z-index: 2; }
@@ -452,7 +452,7 @@
       display: flex;
       flex-direction: column;
     }
-    .tst .badge { align-self: flex-start; background: var(--yellow); color: var(--ink); font-weight: 700; font-size: 13px; padding: 5px 14px; border-radius: 999px; margin-bottom: 18px; }
+    .tst .badge { align-self: flex-start; background: var(--yellow); color: #ffffff; font-weight: 700; font-size: 13px; padding: 5px 14px; border-radius: 999px; margin-bottom: 18px; }
     .tst .quote { color: var(--ink-soft); font-size: 15px; line-height: 1.7; flex: 1; font-style: italic; }
     .tst .who { display: flex; align-items: center; gap: 14px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
     .tst .who .name { font-weight: 700; font-size: 15px; color: var(--ink); }
@@ -467,7 +467,7 @@
     }
     .faq-q .ic {
       flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--yellow);
-      color: var(--ink); display: grid; place-items: center; font-size: 18px; transition: transform .25s;
+      color: #ffffff; display: grid; place-items: center; font-size: 18px; transition: transform .25s;
     }
     details[open] .faq-q .ic { transform: rotate(45deg); }
     .faq-a { padding: 0 26px 24px; color: var(--gray); font-size: 15px; line-height: 1.7; }
@@ -491,7 +491,7 @@
       display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15.5px;
       padding: 14px 28px; border-radius: 999px; text-decoration: none; transition: transform .2s, box-shadow .2s;
     }
-    .talk-wa { background: var(--yellow); color: var(--ink); }
+    .talk-wa { background: var(--yellow); color: #ffffff; }
     .talk-call { background: #fff; color: var(--ink); }
     .talk-wa:hover, .talk-call:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,.28); }
 
@@ -547,7 +547,7 @@
         transform: scale(1) !important;
         opacity: 1 !important;
         border-color: var(--yellow) !important;
-        box-shadow: 0 12px 32px rgba(243, 231, 51, 0.22) !important;
+        box-shadow: 0 12px 32px rgba(36, 99, 235, 0.22) !important;
         z-index: 2;
       }
 
@@ -813,7 +813,7 @@
       bottom: 2px;
       width: 100%;
       height: 5px;
-      background: #F3E733;
+      background: #2463EB;
       border-radius: 4px;
     }
 
@@ -825,7 +825,7 @@
       font-weight: 700;
       color: #ffffff;
       text-decoration: none;
-      border-bottom: 2px solid #F3E733;
+      border-bottom: 2px solid #2463EB;
       padding-bottom: 4px;
       transition: opacity 0.3s ease;
     }
@@ -929,7 +929,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: #F3E733;
+      color: #2463EB;
       margin-bottom: 8px;
     }
 
@@ -966,8 +966,8 @@
     }
 
     .expanded-btn:hover {
-      background: #F3E733;
-      color: #111111;
+      background: #2463EB;
+      color: #ffffff;
     }
 
     @media (max-width: 868px) {
@@ -1061,7 +1061,7 @@
     <div class="wrap">
       <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
         <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; text-decoration: none; color: #111111;">
-          <div class="logo-badge" style="width: 34px; height: 34px; background: #F3E733; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #111111; font-size: 18px;">D</div>
+          <div class="logo-badge" style="width: 34px; height: 34px; background: #2463EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #ffffff; font-size: 18px;">D</div>
           <span>DIGITACURVE</span>
         </a>
 
@@ -1076,7 +1076,7 @@
           <a href="#work" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Case Studies</a>
           <a href="/blog" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Blogs</a>
           <a href="#faq" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">FAQ</a>
-          <a href="#hero-form" class="btn" style="background: #F3E733; color: #111111; font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(243,231,51,0.4);" onclick="dataLayer.push({'event':'cta_click', 'location':'header'});">Let's Talk &rarr;</a>
+          <a href="#hero-form" class="btn" style="background: #2463EB; color: #ffffff; font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(36,99,235,0.4);" onclick="dataLayer.push({'event':'cta_click', 'location':'header'});">Let's Talk &rarr;</a>
         </nav>
       </div>
     </div>
@@ -2273,7 +2273,7 @@
           Prefer to just <span style="color: var(--yellow);">talk</span>? We&apos;re one tap away.
         </h2>
 
-        <a href="https://wa.me/917572094201?text=Hi%20Digitacurve%2C%20I%20want%20to%20talk%20about%20performance%20marketing" target="_blank" onclick="dataLayer.push({'event':'whatsapp_click'});" style="background: var(--yellow); color: var(--ink); font-weight: 700; font-size: 15px; padding: 14px 30px; border-radius: 999px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+        <a href="https://wa.me/917572094201?text=Hi%20Digitacurve%2C%20I%20want%20to%20talk%20about%20performance%20marketing" target="_blank" onclick="dataLayer.push({'event':'whatsapp_click'});" style="background: var(--yellow); color: #ffffff; font-weight: 700; font-size: 15px; padding: 14px 30px; border-radius: 999px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.758.459 3.474 1.33 4.982l-1.413 5.163 5.281-1.385c1.455.794 3.09 1.213 4.787 1.214h.005c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.039-5.176-2.928-7.065-1.889-1.888-4.397-2.928-7.062-2.928zm0 18.286h-.004c-1.49 0-2.951-.4-4.225-1.156l-.303-.18-3.14.823.837-3.063-.197-.314c-.832-1.325-1.272-2.863-1.272-4.444 0-4.46 3.63-8.087 8.092-8.087 2.161 0 4.192.842 5.719 2.37 1.528 1.527 2.368 3.559 2.368 5.72 0 4.461-3.63 8.088-8.09 8.088z"/></svg>
           WhatsApp us
         </a>
@@ -2296,7 +2296,7 @@
         <details class="faq-item" open style="border: 1px solid #e7e6e1; border-radius: 20px; margin-bottom: 16px; background: #ffffff; overflow: hidden;">
           <summary class="faq-q" style="padding: 24px 28px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 17.5px; font-weight: 700; color: var(--ink);">
             <span>What is performance marketing? How can it benefit my business?</span>
-            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
+            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
           </summary>
           <div class="faq-a" style="padding: 0 28px 24px 28px; color: #555; font-size: 15px; line-height: 1.65;">
             Performance marketing is a data-driven approach to digital advertising that focuses on driving specific actions or measurable results, such as clicks, conversions or sales. It benefits your business by providing a clear return on investment (ROI) and allows you to optimise your marketing efforts based on actual performance data. It ensures that your marketing budget is spent efficiently and effectively.
@@ -2307,7 +2307,7 @@
         <details class="faq-item" style="border: 1px solid #e7e6e1; border-radius: 20px; margin-bottom: 16px; background: #ffffff; overflow: hidden;">
           <summary class="faq-q" style="padding: 24px 28px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 17.5px; font-weight: 700; color: var(--ink);">
             <span>How does Digitacurve approach performance marketing for my business?</span>
-            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
+            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
           </summary>
           <div class="faq-a" style="padding: 0 28px 24px 28px; color: #555; font-size: 15px; line-height: 1.65;">
             We build end-to-end acquisition funnels connecting search intent Google Ads, pre-qualifying multi-step landing page forms (collecting budget & timing), creative-led Meta campaigns, and automated CRM lead routing.
@@ -2318,7 +2318,7 @@
         <details class="faq-item" style="border: 1px solid #e7e6e1; border-radius: 20px; margin-bottom: 16px; background: #ffffff; overflow: hidden;">
           <summary class="faq-q" style="padding: 24px 28px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 17.5px; font-weight: 700; color: var(--ink);">
             <span>What metrics and KPIs do you track to measure the success of performance marketing campaigns?</span>
-            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
+            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
           </summary>
           <div class="faq-a" style="padding: 0 28px 24px 28px; color: #555; font-size: 15px; line-height: 1.65;">
             We focus on real business metrics rather than vanity clicks: Cost Per Qualified Lead (CPL), Return On Ad Spend (ROAS), Customer Acquisition Cost (CAC), Conversion Rate (CVR), and direct revenue attribution.
@@ -2329,7 +2329,7 @@
         <details class="faq-item" style="border: 1px solid #e7e6e1; border-radius: 20px; margin-bottom: 16px; background: #ffffff; overflow: hidden;">
           <summary class="faq-q" style="padding: 24px 28px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 17.5px; font-weight: 700; color: var(--ink);">
             <span>Can Digitacurve help with optimising landing pages and conversion rate optimisation (CRO)?</span>
-            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
+            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
           </summary>
           <div class="faq-a" style="padding: 0 28px 24px 28px; color: #555; font-size: 15px; line-height: 1.65;">
             Yes, we conduct thorough landing page UX audits, implement A/B split testing, optimize mobile load speeds, and redesign forms to significantly increase your conversion rate.
@@ -2340,7 +2340,7 @@
         <details class="faq-item" style="border: 1px solid #e7e6e1; border-radius: 20px; margin-bottom: 16px; background: #ffffff; overflow: hidden;">
           <summary class="faq-q" style="padding: 24px 28px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 17.5px; font-weight: 700; color: var(--ink);">
             <span>How much should I spend on Google Ads &amp; Meta Ads?</span>
-            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
+            <span class="ic" style="width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; margin-left: 16px;">+</span>
           </summary>
           <div class="faq-a" style="padding: 0 28px 24px 28px; color: #555; font-size: 15px; line-height: 1.65;">
             Ad budget depends on your target industry CPC and lead volume goals. We recommend an initial monthly budget of at least ₹50,000 to ₹1,00,000 to allow statistically significant keyword testing and conversion data collection.
@@ -2370,7 +2370,7 @@
         </div>
 
         <div style="display: flex; gap: 12px; align-items: center;">
-          <a href="blogs.html" onclick="dataLayer.push({'event':'blog_click', 'action':'All Articles'});" style="background: var(--yellow); color: var(--ink); font-weight: 700; font-size: 14.5px; padding: 12px 26px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.2s ease;">
+          <a href="/blog" onclick="dataLayer.push({'event':'blog_click', 'action':'All Articles'});" style="background: var(--yellow); color: #ffffff; font-weight: 700; font-size: 14.5px; padding: 12px 26px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.2s ease;">
             All Articles &rarr;
           </a>
           <div style="display: flex; gap: 8px; align-items: center;">
