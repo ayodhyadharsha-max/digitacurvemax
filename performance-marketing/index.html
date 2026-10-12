@@ -412,19 +412,21 @@
     /* Banner Module */
     .banner {
       background: var(--yellow);
-      color: var(--ink);
+      color: #ffffff;
       border-radius: 24px;
       padding: 52px 48px;
       display: grid;
       grid-template-columns: 1fr minmax(340px, 420px);
       gap: 48px;
       align-items: center;
+      box-shadow: 0 20px 48px rgba(36, 99, 235, 0.25);
     }
-    .banner h2 { font-size: clamp(28px, 3.2vw, 42px); font-weight: 800; line-height: 1.15; color: var(--ink); }
-    .banner .banner-sub { margin-top: 14px; font-size: 16px; color: var(--ink); }
+    .banner h2 { font-size: clamp(28px, 3.2vw, 42px); font-weight: 800; line-height: 1.15; color: #ffffff; }
+    .banner h2 em { font-style: italic; color: #ffffff; }
+    .banner .banner-sub { margin-top: 14px; font-size: 16px; color: rgba(255, 255, 255, 0.92); }
     .banner-points { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
-    .banner-points li { display: flex; items-center; gap: 10px; font-weight: 600; font-size: 15px; color: var(--ink); }
-    .banner-points .hex { flex: none; background: var(--ink); }
+    .banner-points li { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; color: #ffffff; }
+    .banner-points .hex { flex: none; background: #ffffff; }
 
     /* Stats Section */
     .stats { background: var(--ink); color: #fff; border-radius: 24px; padding: 64px 48px; }
