@@ -1052,31 +1052,31 @@
       }
     }
   
-    /* Services Category Pills 2-Row Wrap & Mobile Card Tuning */
-    .svc-pills-wrap {
+    /* Services & Process Category Pills 2-Row Wrap & Mobile Card Tuning */
+    .svc-pills-wrap, .process-pills-wrap {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-bottom: 24px;
     }
-    .svc-pills-row {
+    .svc-pills-row, .process-pills-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       align-items: center;
     }
     @media (min-width: 769px) {
-      .svc-pills-wrap {
+      .svc-pills-wrap, .process-pills-wrap {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 8px;
       }
-      .svc-pills-row {
+      .svc-pills-row, .process-pills-row {
         display: contents;
       }
     }
     @media (max-width: 768px) {
-      .svc-pills-wrap {
+      .svc-pills-wrap, .process-pills-wrap {
         display: flex !important;
         flex-direction: column !important;
         gap: 8px !important;
@@ -1084,7 +1084,7 @@
         margin-bottom: 22px !important;
         padding-bottom: 0 !important;
       }
-      .svc-pills-row {
+      .svc-pills-row, .process-pills-row {
         display: flex !important;
         flex-wrap: nowrap !important;
         gap: 6px !important;
@@ -1100,8 +1100,16 @@
         flex: 1 1 auto !important;
         text-align: center !important;
       }
-      /* Services Specific Mobile Card Sizing (Compact & Smooth Touch Slider) */
-      #services .svc-grid {
+      .process-pill {
+        font-size: 10.5px !important;
+        padding: 6px 5px !important;
+        border-radius: 999px !important;
+        white-space: nowrap !important;
+        flex: 1 1 auto !important;
+        text-align: center !important;
+      }
+      /* Services & Process Specific Mobile Card Sizing (Compact & Smooth Touch Slider) */
+      #services .svc-grid, #process .svc-grid {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
@@ -1114,7 +1122,7 @@
         scrollbar-width: none !important;
         -webkit-overflow-scrolling: touch !important;
       }
-      #services .svc-grid .svc {
+      #services .svc-grid .svc, #process .svc-grid .svc {
         flex: 0 0 72% !important;
         min-width: 220px !important;
         max-width: 265px !important;
@@ -1122,31 +1130,36 @@
         border-radius: 18px !important;
         scroll-snap-align: start !important;
       }
-      #services .svc-grid .svc .bee {
+      #services .svc-grid .svc .bee, #process .svc-grid .svc .bee {
         font-size: 10px !important;
         padding: 3px 8px !important;
         margin-bottom: 10px !important;
       }
-      #services .svc-grid .svc h3 {
+      #services .svc-grid .svc h3, #process .svc-grid .svc h3 {
         font-size: 16px !important;
         line-height: 1.25 !important;
         margin-bottom: 8px !important;
       }
-      #services .svc-grid .svc p {
+      #services .svc-grid .svc p, #process .svc-grid .svc p {
         font-size: 12.5px !important;
         line-height: 1.5 !important;
         color: #4b5563 !important;
       }
     }
     @media (max-width: 420px) {
-      .svc-pills-row {
+      .svc-pills-row, .process-pills-row {
         gap: 4px !important;
       }
       .svc-pill {
         font-size: 9.5px !important;
         padding: 5px 6px !important;
       }
-      #services .svc-grid .svc {
+      .process-pill {
+        font-size: 9.5px !important;
+        padding: 5px 3px !important;
+        letter-spacing: -0.2px !important;
+      }
+      #services .svc-grid .svc, #process .svc-grid .svc {
         flex: 0 0 74% !important;
         min-width: 200px !important;
         max-width: 245px !important;
@@ -2340,17 +2353,21 @@
         <p>Our systematic 8-stage framework ensures every rupee spent delivers maximum accountable business ROI.</p>
       </div>
 
-      <!-- Interactive Quick Stage Pills (Matching Kashi Reference) -->
-      <div style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; margin-bottom: 24px; padding-bottom: 4px; -webkit-overflow-scrolling: touch;">
-        <button class="svc-pill active process-pill" onclick="jumpToProcess(0, this)">All Stages</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(0, this)">01 Research</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(1, this)">02 Strategy</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(2, this)">03 Build</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(3, this)">04 Testing</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(4, this)">05 CRO</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(5, this)">06 Tracking</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(6, this)">07 Optimise</button>
-        <button class="svc-pill process-pill" onclick="jumpToProcess(7, this)">08 Scale</button>
+      <!-- Interactive Quick Stage Pills (2 Clean Lines on Mobile, Never Slider) -->
+      <div class="process-pills-wrap">
+        <div class="process-pills-row">
+          <button class="svc-pill active process-pill" onclick="jumpToProcess(0, this)">All</button>
+          <button class="svc-pill process-pill" onclick="jumpToProcess(0, this)">01 Research</button>
+          <button class="svc-pill process-pill" onclick="jumpToProcess(1, this)">02 Strategy</button>
+          <button class="svc-pill process-pill" onclick="jumpToProcess(2, this)">03 Build</button>
+          <button class="svc-pill process-pill" onclick="jumpToProcess(3, this)">04 Testing</button>
+        </div>
+        <div class="process-pills-row">
+          <button class="svc-pill process-pill" onclick="jumpToProcess(4, this)">05 CRO</button>
+          <button class="svc-pill process-pill" onclick="jumpToProcess(5, this)">06 Tracking</button>
+          <button class="svc-pill process-pill" onclick="jumpToProcess(6, this)">07 Optimise</button>
+          <button class="svc-pill process-pill" onclick="jumpToProcess(7, this)">08 Scale</button>
+        </div>
       </div>
 
       <div class="svc-grid" style="grid-template-columns: repeat(4, 1fr);">
