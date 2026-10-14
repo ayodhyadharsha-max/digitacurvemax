@@ -1051,6 +1051,295 @@
         font-size: 12px;
       }
     }
+  
+    /* Services Category Pills 2-Row Wrap & Mobile Card Tuning */
+    .svc-pills-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .svc-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    @media (min-width: 769px) {
+      .svc-pills-wrap {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .svc-pills-row {
+        display: contents;
+      }
+    }
+    @media (max-width: 768px) {
+      .svc-pills-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        overflow: visible !important;
+        margin-bottom: 22px !important;
+        padding-bottom: 0 !important;
+      }
+      .svc-pills-row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 6px !important;
+        width: 100% !important;
+        overflow: visible !important;
+        justify-content: space-between !important;
+      }
+      .svc-pill {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        border-radius: 999px !important;
+        white-space: nowrap !important;
+        flex: 1 1 auto !important;
+        text-align: center !important;
+      }
+      /* Services Specific Mobile Card Sizing (Compact & Smooth Touch Slider) */
+      #services .svc-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 12px !important;
+        padding: 4px 18px 20px 18px !important;
+        margin-left: -18px !important;
+        margin-right: -18px !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      #services .svc-grid .svc {
+        flex: 0 0 72% !important;
+        min-width: 220px !important;
+        max-width: 265px !important;
+        padding: 22px 18px !important;
+        border-radius: 18px !important;
+        scroll-snap-align: start !important;
+      }
+      #services .svc-grid .svc .bee {
+        font-size: 10px !important;
+        padding: 3px 8px !important;
+        margin-bottom: 10px !important;
+      }
+      #services .svc-grid .svc h3 {
+        font-size: 16px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 8px !important;
+      }
+      #services .svc-grid .svc p {
+        font-size: 12.5px !important;
+        line-height: 1.5 !important;
+        color: #4b5563 !important;
+      }
+    }
+    @media (max-width: 420px) {
+      .svc-pills-row {
+        gap: 4px !important;
+      }
+      .svc-pill {
+        font-size: 9.5px !important;
+        padding: 5px 6px !important;
+      }
+      #services .svc-grid .svc {
+        flex: 0 0 74% !important;
+        min-width: 200px !important;
+        max-width: 245px !important;
+        padding: 18px 14px !important;
+      }
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+    .pricing-card {
+      background: #ffffff;
+      border: 1px solid #e7e6e1;
+      border-radius: 24px;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    }
+    .pricing-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+    }
+    .pricing-card.featured {
+      border: 2px solid var(--yellow);
+      background: #ffffff;
+      box-shadow: 0 20px 48px -10px rgba(36, 99, 235, 0.22);
+      transform: scale(1.02);
+      z-index: 2;
+    }
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--yellow);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 5px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(36, 99, 235, 0.4);
+      white-space: nowrap;
+    }
+    .pricing-tier-tag {
+      font-family: 'Space Mono', monospace, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .pricing-tier-tag.featured-tag {
+      color: var(--yellow);
+    }
+    .pricing-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .pricing-desc {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.55;
+      min-height: 42px;
+      margin-bottom: 24px;
+    }
+    .pricing-amount-box {
+      border-top: 1px solid #f1f5f9;
+      border-bottom: 1px solid #f1f5f9;
+      padding: 20px 0;
+      margin-bottom: 24px;
+    }
+    .pricing-price {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .pricing-price .currency {
+      font-size: 26px;
+      font-weight: 700;
+      color: #111111;
+    }
+    .pricing-price .period {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #64748b;
+      margin-left: 6px;
+    }
+    .pricing-billing {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #64748b;
+      margin-top: 6px;
+    }
+    .pricing-billing.featured-billing {
+      color: var(--yellow);
+    }
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .pricing-features li i {
+      color: #10b981;
+      font-size: 14px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .pricing-cta-wrap {
+      margin-top: auto;
+    }
+    .pricing-btn {
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      background: #f1f5f9;
+      color: var(--ink);
+      transition: all 0.2s ease;
+      border: 1px solid #e2e8f0;
+    }
+    .pricing-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .pricing-btn.featured-btn {
+      background: var(--yellow);
+      color: #ffffff;
+      border: 1px solid var(--yellow);
+      box-shadow: 0 6px 20px rgba(36, 99, 235, 0.35);
+    }
+    .pricing-btn.featured-btn:hover {
+      background: #1d4ed8;
+      box-shadow: 0 8px 24px rgba(36, 99, 235, 0.45);
+    }
+    @media (max-width: 980px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .pricing-card.featured {
+        transform: none !important;
+      }
+    }
+    @media (max-width: 640px) {
+      .pricing-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+      }
+      .pricing-price {
+        font-size: 34px;
+      }
+      .pricing-desc {
+        min-height: auto;
+        margin-bottom: 18px;
+      }
+    }
+
   </style>
 
   <!-- JSON-LD Schemas -->
@@ -1116,6 +1405,7 @@
           <a href="#services" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Services</a>
           <a href="#process" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Process</a>
           <a href="#results" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Results</a>
+          <a href="#pricing" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Pricing</a>
           <a href="#work" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Case Studies</a>
           <a href="/blog" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Blogs</a>
           <a href="#faq" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">FAQ</a>
@@ -1248,17 +1538,21 @@
         <p>Every campaign is engineered around real business outcomes — not vanity metrics like clicks or impressions.</p>
       </div>
 
-      <!-- Interactive Quick Category Pills (Matching Kashi Reference) -->
-      <div style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; margin-bottom: 24px; padding-bottom: 4px; -webkit-overflow-scrolling: touch;">
-        <button class="svc-pill active" onclick="jumpToSvc(0, this)">All</button>
-        <button class="svc-pill" onclick="jumpToSvc(0, this)">Google Ads</button>
-        <button class="svc-pill" onclick="jumpToSvc(1, this)">Meta Ads</button>
-        <button class="svc-pill" onclick="jumpToSvc(2, this)">Lead Gen</button>
-        <button class="svc-pill" onclick="jumpToSvc(3, this)">Performance</button>
-        <button class="svc-pill" onclick="jumpToSvc(4, this)">CRO</button>
-        <button class="svc-pill" onclick="jumpToSvc(5, this)">Remarketing</button>
-        <button class="svc-pill" onclick="jumpToSvc(6, this)">Analytics</button>
-        <button class="svc-pill" onclick="jumpToSvc(7, this)">AI Ads</button>
+            <!-- Interactive Quick Category Pills (2 Clean Lines on Mobile, Never Slider) -->
+      <div class="svc-pills-wrap">
+        <div class="svc-pills-row">
+          <button class="svc-pill active" onclick="jumpToSvc(0, this)">All</button>
+          <button class="svc-pill" onclick="jumpToSvc(0, this)">Google Ads</button>
+          <button class="svc-pill" onclick="jumpToSvc(1, this)">Meta Ads</button>
+          <button class="svc-pill" onclick="jumpToSvc(2, this)">Lead Gen</button>
+          <button class="svc-pill" onclick="jumpToSvc(4, this)">CRO</button>
+        </div>
+        <div class="svc-pills-row">
+          <button class="svc-pill" onclick="jumpToSvc(3, this)">Performance</button>
+          <button class="svc-pill" onclick="jumpToSvc(5, this)">Remarketing</button>
+          <button class="svc-pill" onclick="jumpToSvc(6, this)">Analytics</button>
+          <button class="svc-pill" onclick="jumpToSvc(7, this)">AI Ads</button>
+        </div>
       </div>
 
       <div class="svc-grid">
@@ -2302,6 +2596,135 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  
+  <!-- PRICING SECTION (3 TRANSPARENT PACKAGES) -->
+  <section class="section" id="pricing" style="background: #ffffff; border-top: 1px solid #e7e6e1;">
+    <div class="wrap">
+      <div class="section-head" style="text-align: center; max-width: 720px; margin: 0 auto 50px;">
+        <div class="eyebrow" style="justify-content: center;"><span class="hex"></span> TRANSPARENT PRICING</div>
+        <h2 style="font-size: clamp(28px, 4vw, 46px); font-weight: 800; color: var(--ink); margin-top: 10px; margin-bottom: 14px; letter-spacing: -0.02em;">
+          Predictable Plans. <span style="color: var(--yellow);">Zero Hidden Costs.</span>
+        </h2>
+        <p style="font-size: 16px; color: var(--gray); line-height: 1.6;">
+          Founder-led strategy, high ROAS accountability, and transparent deliverables engineered into every package.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        
+        <!-- Tier 1: ₹29,999 / Starter Growth -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <span class="pricing-tier-tag">STARTER GROWTH</span>
+            <h3 class="pricing-title">Essential Performance</h3>
+            <p class="pricing-desc">Ideal for emerging brands and businesses launching paid advertising with high efficiency.</p>
+          </div>
+
+          <div class="pricing-amount-box">
+            <div class="pricing-price">
+              <span class="currency">₹</span>29,999
+              <span class="period">/ month</span>
+            </div>
+            <div class="pricing-billing">Billed Monthly · Cancel Anytime</div>
+          </div>
+
+          <div class="pricing-divider"></div>
+
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> <span><strong>1 Core Channel:</strong> Google Ads or Meta Ads</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Campaign Structure &amp; Audience Targeting</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>High-Converting Ad Copywriting</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>GA4 &amp; Standard Pixel Event Tracking</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Bi-Weekly Optimization &amp; Negative Keywords</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Monthly ROAS &amp; Performance Report</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Ad Spend Managed: Up to ₹1.5 Lakh/mo</span></li>
+          </ul>
+
+          <div class="pricing-cta-wrap">
+            <a href="#hero-form" class="pricing-btn" onclick="dataLayer.push({'event':'pricing_select', 'plan':'Starter 29999'});">
+              Get Started &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Tier 2: ₹49,999 / Scale Accelerator (MOST POPULAR) -->
+        <div class="pricing-card featured">
+          <div class="popular-badge">MOST POPULAR</div>
+          
+          <div class="pricing-header">
+            <span class="pricing-tier-tag featured-tag">SCALE ACCELERATOR</span>
+            <h3 class="pricing-title">Full-Funnel Growth</h3>
+            <p class="pricing-desc">Complete multi-channel customer acquisition engine built for rapid scaling and aggressive ROI.</p>
+          </div>
+
+          <div class="pricing-amount-box">
+            <div class="pricing-price">
+              <span class="currency">₹</span>49,999
+              <span class="period">/ month</span>
+            </div>
+            <div class="pricing-billing featured-billing">Billed Monthly · Priority Onboarding</div>
+          </div>
+
+          <div class="pricing-divider"></div>
+
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> <span><strong>Multi-Channel:</strong> Google + Meta + YouTube Ads</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Rapid Creative Hook Testing &amp; UGC Formats</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Server-Side CAPI &amp; Advanced Funnel Tracking</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Dynamic Multi-Touch Retargeting Loops</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Dedicated CRO &amp; Landing Page Recommendations</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Weekly Bid Tuning &amp; Lead Qualification Routing</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Direct Founder Strategy (RJ) &amp; WhatsApp Group</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Ad Spend Managed: Up to ₹5 Lakh/mo</span></li>
+          </ul>
+
+          <div class="pricing-cta-wrap">
+            <a href="#hero-form" class="pricing-btn featured-btn" onclick="dataLayer.push({'event':'pricing_select', 'plan':'Scale 49999'});">
+              Claim Growth Plan &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Tier 3: Custom / Enterprise -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <span class="pricing-tier-tag">ENTERPRISE CUSTOM</span>
+            <h3 class="pricing-title">Custom Growth Engine</h3>
+            <p class="pricing-desc">Tailored growth infrastructure for scaling brands, multi-location businesses, and high ad budgets.</p>
+          </div>
+
+          <div class="pricing-amount-box">
+            <div class="pricing-price">
+              Custom
+              <span class="period">/ tailored scope</span>
+            </div>
+            <div class="pricing-billing">Fixed Retainer / Performance Hybrid</div>
+          </div>
+
+          <div class="pricing-divider"></div>
+
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> <span><strong>Omni-Channel:</strong> Google, Meta, LinkedIn &amp; AI Search</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Custom Sub-Second Next.js Landing Page Builds</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Full CRM Integration &amp; Offline Sales Sync</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Continuous A/B Split Testing &amp; CRO Audits</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Dedicated Growth Manager &amp; Creative Team</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Weekly Deep-Dive Strategy &amp; Executive Reporting</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Custom SLA, NDA &amp; 24/7 Dedicated Slack Channel</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Ad Spend Managed: ₹5 Lakh+ to Scale</span></li>
+          </ul>
+
+          <div class="pricing-cta-wrap">
+            <a href="https://wa.me/917572094201?text=Hi%20Digitacurve%2C%20I%20want%20to%20discuss%20a%20Custom%20Enterprise%20Plan" target="_blank" class="pricing-btn" onclick="dataLayer.push({'event':'pricing_select', 'plan':'Custom Enterprise'});">
+              Customize Your Plan &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
