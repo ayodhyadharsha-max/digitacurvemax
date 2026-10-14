@@ -1167,6 +1167,29 @@
       }
     }
 
+    /* Clean URL Smooth Scroll Margin & Sitelink Highlight */
+    html {
+      scroll-behavior: smooth;
+    }
+    section[id], .pricing-card[id], #hero-form, #featured-work {
+      scroll-margin-top: 90px;
+    }
+    .pricing-card.sitelink-card-active {
+      border-color: var(--yellow) !important;
+      box-shadow: 0 0 0 3px rgba(254, 216, 79, 0.65), 0 20px 48px rgba(36, 99, 235, 0.18) !important;
+      transform: translateY(-4px) !important;
+      transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    @keyframes formPulse {
+      0% { box-shadow: 0 0 0 0 rgba(254, 216, 79, 0.8); }
+      50% { box-shadow: 0 0 0 12px rgba(254, 216, 79, 0.35); }
+      100% { box-shadow: 0 0 0 0 rgba(254, 216, 79, 0); }
+    }
+    .form-highlight-pulse {
+      animation: formPulse 1.2s ease-out;
+      border-color: var(--yellow) !important;
+    }
+
     /* Pricing Section */
     .pricing-grid {
       display: grid;
@@ -1186,6 +1209,7 @@
       transition: all 0.3s ease;
       position: relative;
       box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+      scroll-margin-top: 90px;
     }
     .pricing-card:hover {
       border-color: #cbd5e1;
@@ -1508,14 +1532,14 @@
         </button>
 
         <nav style="display: flex; align-items: center; gap: 22px;">
-          <a href="#services" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Services</a>
-          <a href="#process" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Process</a>
-          <a href="#results" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Results</a>
-          <a href="#pricing" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Pricing</a>
-          <a href="#work" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Case Studies</a>
+          <a href="/performance-marketing/services" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Services</a>
+          <a href="/performance-marketing/process" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Process</a>
+          <a href="/performance-marketing/results" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Results</a>
+          <a href="/performance-marketing/pricing" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Pricing</a>
+          <a href="/performance-marketing/work" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Case Studies</a>
           <a href="/blog" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">Blogs</a>
-          <a href="#faq" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">FAQ</a>
-          <a href="#hero-form" class="btn" style="background: #2463EB; color: #ffffff; font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(36,99,235,0.4);" onclick="dataLayer.push({'event':'cta_click', 'location':'header'});">Let's Talk &rarr;</a>
+          <a href="/performance-marketing/faq" style="font-weight: 600; font-size: 14.5px; color: #111111; text-decoration: none;">FAQ</a>
+          <a href="/performance-marketing/get-started" class="btn" style="background: #2463EB; color: #ffffff; font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(36,99,235,0.4);" onclick="dataLayer.push({'event':'cta_click', 'location':'header'});">Let's Talk &rarr;</a>
         </nav>
       </div>
     </div>
@@ -1579,6 +1603,14 @@
             <input type="hidden" name="redirect" value="https://digitacurve.com/thank-you">
             <input type="hidden" name="subject" value="New Lead Submission - Hero Form">
             <input type="hidden" name="from_name" value="Digitacurve Website">
+            <input type="hidden" name="selected_plan" id="selected-plan-input" value="General Inquiry">
+
+            <!-- Selected Package Notification Banner -->
+            <div id="form-selected-plan-badge" style="display: none; background: #fffde7; border: 1.5px solid var(--yellow); padding: 9px 14px; border-radius: 12px; font-size: 13px; font-weight: 700; color: #111; margin-bottom: 12px; align-items: center; justify-content: space-between;">
+              <span style="display: inline-flex; align-items: center; gap: 6px;">🎯 Selected Plan: <strong id="form-selected-plan-text" style="color: #000;"></strong></span>
+              <span style="font-size: 11px; color: #777; cursor: pointer; text-decoration: underline;" onclick="document.getElementById('form-selected-plan-badge').style.display='none'; document.getElementById('selected-plan-input').value='General Inquiry';">Clear</span>
+            </div>
+
             <div style="display: flex; flex-direction: column; gap: 12px;">
               <div>
                 <label style="font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; display: block;">Your Full Name *</label>
@@ -1803,7 +1835,7 @@
 
     <!-- ACCORDION CONTAINER -->
     <div class="accordion-container">
-       
+      
       <!-- CARD 1: Trip Customizer (Active by default) -->
       <div class="accordion-card active">
         <img class="accordion-bg" src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1000&auto=format&fit=crop" alt="Trip Customizer Travel" />
@@ -1913,7 +1945,7 @@
       <div class="pricing-grid">
         
         <!-- Tier 1: ₹29,999 / Starter Growth -->
-        <div class="pricing-card">
+        <div class="pricing-card" id="essential-performance" data-plan="Essential Performance (₹29,999/mo)">
           <div class="pricing-header">
             <span class="pricing-tier-tag">STARTER GROWTH</span>
             <h3 class="pricing-title">Essential Performance</h3>
@@ -1953,14 +1985,14 @@
           </div>
 
           <div class="pricing-cta-wrap">
-            <a href="#hero-form" class="pricing-btn" onclick="dataLayer.push({'event':'pricing_select', 'plan':'Starter 29999'});">
+            <a href="/performance-marketing/get-started" class="pricing-btn" onclick="selectPricingPlan('Essential Performance (₹29,999/mo)'); return false;">
               Get Started &rarr;
             </a>
           </div>
         </div>
 
         <!-- Tier 2: ₹49,999 / Scale Accelerator (MOST POPULAR) -->
-        <div class="pricing-card featured">
+        <div class="pricing-card featured" id="scale-accelerator" data-plan="Scale Accelerator (₹49,999/mo)">
           <div class="popular-badge">MOST POPULAR</div>
           
           <div class="pricing-header">
@@ -2002,14 +2034,14 @@
           </div>
 
           <div class="pricing-cta-wrap">
-            <a href="#hero-form" class="pricing-btn featured-btn" onclick="dataLayer.push({'event':'pricing_select', 'plan':'Scale 49999'});">
+            <a href="/performance-marketing/get-started" class="pricing-btn featured-btn" onclick="selectPricingPlan('Scale Accelerator (₹49,999/mo)'); return false;">
               Claim Growth Plan &rarr;
             </a>
           </div>
         </div>
 
         <!-- Tier 3: Custom / Enterprise (Pro Tier) -->
-        <div class="pricing-card">
+        <div class="pricing-card" id="enterprise-custom" data-plan="Enterprise Custom Plan">
           <div class="pricing-header">
             <span class="pricing-tier-tag">ENTERPRISE CUSTOM</span>
             <h3 class="pricing-title">Custom Growth Engine</h3>
@@ -2049,9 +2081,14 @@
           </div>
 
           <div class="pricing-cta-wrap">
-            <a href="https://wa.me/917572094201?text=Hi%20Digitacurve%2C%20I%20want%20to%20discuss%20a%20Custom%20Enterprise%20Plan" target="_blank" class="pricing-btn" onclick="dataLayer.push({'event':'pricing_select', 'plan':'Custom Enterprise'});">
+            <a href="/performance-marketing/get-started" class="pricing-btn" onclick="selectPricingPlan('Enterprise Custom Plan'); return false;">
               Customize Your Plan &rarr;
             </a>
+            <div style="text-align: center; margin-top: 10px;">
+              <a href="https://wa.me/917572094201?text=Hi%20Digitacurve%2C%20I%20want%20to%20discuss%20a%20Custom%20Enterprise%20Plan" target="_blank" style="font-size: 12.5px; color: var(--gray); text-decoration: underline; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fab fa-whatsapp" style="color: #25D366; font-size: 14px;"></i> Or chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
@@ -3234,11 +3271,11 @@
         <div class="footer-explore">
           <h4 style="font-size: 16px; font-weight: 800; color: var(--ink); margin: 0 0 20px 0;">Explore</h4>
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14.5px;">
-            <li><a href="#services" style="color: #555; text-decoration: none;">Google Ads</a></li>
-            <li><a href="#services" style="color: #555; text-decoration: none;">Meta Ads</a></li>
-            <li><a href="#services" style="color: #555; text-decoration: none;">Performance Marketing</a></li>
-            <li><a href="#work" style="color: #555; text-decoration: none;">Case Studies</a></li>
-            <li><a href="#partner" style="color: #555; text-decoration: none;">Our Clients</a></li>
+            <li><a href="/performance-marketing/services" style="color: #555; text-decoration: none;">Google Ads</a></li>
+            <li><a href="/performance-marketing/services" style="color: #555; text-decoration: none;">Meta Ads</a></li>
+            <li><a href="/performance-marketing/pricing" style="color: #555; text-decoration: none;">Pricing Plans</a></li>
+            <li><a href="/performance-marketing/work" style="color: #555; text-decoration: none;">Case Studies</a></li>
+            <li><a href="/performance-marketing/partner" style="color: #555; text-decoration: none;">Our Clients</a></li>
           </ul>
         </div>
 
@@ -3246,9 +3283,9 @@
         <div class="footer-company">
           <h4 style="font-size: 16px; font-weight: 800; color: var(--ink); margin: 0 0 20px 0;">Company</h4>
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14.5px;">
-            <li><a href="#services" style="color: #555; text-decoration: none;">Industries We Serve</a></li>
-            <li><a href="#partner" style="color: #555; text-decoration: none;">Who We Are</a></li>
-            <li><a href="#hero-form" style="color: #555; text-decoration: none;">Careers</a></li>
+            <li><a href="/performance-marketing/services" style="color: #555; text-decoration: none;">Industries We Serve</a></li>
+            <li><a href="/performance-marketing/partner" style="color: #555; text-decoration: none;">Who We Are</a></li>
+            <li><a href="/performance-marketing/get-started" style="color: #555; text-decoration: none;">Get a Free Audit</a></li>
             <li><a href="/blog" style="color: #555; text-decoration: none;">Insights &amp; Blogs</a></li>
           </ul>
         </div>
@@ -3270,7 +3307,7 @@
 
       <!-- Legal Links Bar -->
       <div style="border-top: 1px solid #eeeeee; padding: 20px 0; display: flex; gap: 24px; flex-wrap: wrap; font-size: 13.5px;">
-        <a href="#faq" style="color: #666; text-decoration: none; font-weight: 500;">FAQs</a>
+        <a href="/performance-marketing/faq" style="color: #666; text-decoration: none; font-weight: 500;">FAQs</a>
         <a href="privacy.html" style="color: #666; text-decoration: none; font-weight: 500;">Privacy Policy</a>
         <a href="terms.html" style="color: #666; text-decoration: none; font-weight: 500;">Cookie Preferences</a>
         <a href="terms.html" style="color: #666; text-decoration: none; font-weight: 500;">Terms &amp; Conditions</a>
@@ -3296,7 +3333,194 @@
 
 
   <script>
-    
+    // Clean URL & Section Routing Engine (No '#' in URLs)
+    const sectionRoutes = {
+      'services': 'services',
+      'process': 'process',
+      'results': 'results',
+      'pricing': 'pricing',
+      'work': 'featured-work',
+      'case-studies': 'featured-work',
+      'faq': 'faq',
+      'partner': 'partner',
+      'get-started': 'hero-form',
+      'audit': 'hero-form',
+      'essential-performance': 'essential-performance',
+      'scale-accelerator': 'scale-accelerator',
+      'enterprise-custom': 'enterprise-custom'
+    };
+
+    function navigateToSection(targetKey, updateUrl = true) {
+      const elId = sectionRoutes[targetKey] || targetKey;
+      const targetEl = document.getElementById(elId);
+      
+      if (!targetEl) return false;
+
+      // Handle pricing mobile slider snapping
+      if (targetKey === 'essential-performance' && typeof jumpToPricing === 'function') jumpToPricing(0);
+      if (targetKey === 'scale-accelerator' && typeof jumpToPricing === 'function') jumpToPricing(1);
+      if (targetKey === 'enterprise-custom' && typeof jumpToPricing === 'function') jumpToPricing(2);
+
+      // Smooth scroll into view
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Highlight if sitelink pricing card
+      if (['essential-performance', 'scale-accelerator', 'enterprise-custom'].includes(targetKey)) {
+        document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('sitelink-card-active'));
+        targetEl.classList.add('sitelink-card-active');
+      }
+
+      // Update URL in browser address bar cleanly without '#'
+      if (updateUrl && window.history && window.history.pushState) {
+        const basePath = window.location.pathname.startsWith('/performance-marketing') ? '/performance-marketing' : '/performance-marketing';
+        const cleanPath = `${basePath}/${targetKey}`;
+        if (window.location.pathname !== cleanPath) {
+          window.history.pushState({ section: targetKey }, '', cleanPath);
+        }
+      }
+
+      // Close mobile menu if open
+      const navHeader = document.querySelector('header.nav');
+      if (navHeader) navHeader.classList.remove('mobile-open');
+
+      return true;
+    }
+
+    // Handle plan selection from card CTA buttons
+    function selectPricingPlan(planName) {
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          'event': 'pricing_select',
+          'plan': planName
+        });
+      }
+
+      // Update hidden input in form
+      const planInput = document.getElementById('selected-plan-input');
+      if (planInput) {
+        planInput.value = planName;
+      }
+
+      // Show selection badge in form
+      const badge = document.getElementById('form-selected-plan-badge');
+      const badgeText = document.getElementById('form-selected-plan-text');
+      if (badge && badgeText) {
+        badgeText.textContent = planName;
+        badge.style.display = 'flex';
+      }
+
+      // Navigate to form with clean URL
+      navigateToSection('get-started', true);
+
+      // Focus form input
+      const formEl = document.getElementById('hero-form');
+      if (formEl) {
+        formEl.classList.add('form-highlight-pulse');
+        setTimeout(() => {
+          formEl.classList.remove('form-highlight-pulse');
+          const nameInput = formEl.querySelector('input[name="name"]');
+          if (nameInput) nameInput.focus();
+        }, 600);
+      }
+    }
+
+    // Intercept clicks on links pointing to sections
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      let sectionKey = null;
+      if (href.startsWith('#')) {
+        sectionKey = href.substring(1);
+      } else if (href.includes('/performance-marketing/')) {
+        sectionKey = href.split('/performance-marketing/')[1]?.split('?')[0]?.split('#')[0];
+      } else if (href.startsWith('/') && sectionRoutes[href.substring(1)]) {
+        sectionKey = href.substring(1);
+      }
+
+      if (sectionKey && sectionRoutes[sectionKey]) {
+        e.preventDefault();
+        navigateToSection(sectionKey, true);
+      }
+    });
+
+    // Check direct URL on page load (e.g. from Google Ads Sitelink or clean URL)
+    function checkCurrentRoute() {
+      const fullPath = (window.location.pathname || '').toLowerCase();
+      const hash = (window.location.hash || '').toLowerCase().replace('#', '');
+      const search = (window.location.search || '').toLowerCase();
+      
+      let matchedKey = null;
+
+      for (const key of Object.keys(sectionRoutes)) {
+        if (fullPath.endsWith('/' + key) || fullPath.includes('/' + key + '/') || hash === key || search.includes('plan=' + key)) {
+          matchedKey = key;
+          break;
+        }
+      }
+
+      if (!matchedKey) {
+        if (fullPath.includes('essential') || hash.includes('essential') || fullPath.includes('29999')) matchedKey = 'essential-performance';
+        else if (fullPath.includes('scale') || hash.includes('scale') || fullPath.includes('49999')) matchedKey = 'scale-accelerator';
+        else if (fullPath.includes('enterprise') || hash.includes('enterprise') || fullPath.includes('custom')) matchedKey = 'enterprise-custom';
+        else if (fullPath.includes('service') || hash.includes('service')) matchedKey = 'services';
+        else if (fullPath.includes('process') || hash.includes('process')) matchedKey = 'process';
+        else if (fullPath.includes('price') || hash.includes('price')) matchedKey = 'pricing';
+      }
+
+      if (matchedKey) {
+        // If hash was used, clean it to slash path in browser bar
+        if (window.location.hash) {
+          const basePath = window.location.pathname.startsWith('/performance-marketing') ? '/performance-marketing' : '/performance-marketing';
+          window.history.replaceState({ section: matchedKey }, '', `${basePath}/${matchedKey}`);
+        }
+
+        // Pre-fill plan if sitelink pricing card
+        if (matchedKey === 'essential-performance') {
+          const planInput = document.getElementById('selected-plan-input');
+          if (planInput) planInput.value = 'Essential Performance (₹29,999/mo)';
+          const badge = document.getElementById('form-selected-plan-badge');
+          const badgeText = document.getElementById('form-selected-plan-text');
+          if (badge && badgeText) {
+            badgeText.textContent = 'Essential Performance (₹29,999/mo)';
+            badge.style.display = 'flex';
+          }
+        } else if (matchedKey === 'scale-accelerator') {
+          const planInput = document.getElementById('selected-plan-input');
+          if (planInput) planInput.value = 'Scale Accelerator (₹49,999/mo)';
+          const badge = document.getElementById('form-selected-plan-badge');
+          const badgeText = document.getElementById('form-selected-plan-text');
+          if (badge && badgeText) {
+            badgeText.textContent = 'Scale Accelerator (₹49,999/mo)';
+            badge.style.display = 'flex';
+          }
+        } else if (matchedKey === 'enterprise-custom') {
+          const planInput = document.getElementById('selected-plan-input');
+          if (planInput) planInput.value = 'Enterprise Custom Plan';
+          const badge = document.getElementById('form-selected-plan-badge');
+          const badgeText = document.getElementById('form-selected-plan-text');
+          if (badge && badgeText) {
+            badgeText.textContent = 'Enterprise Custom Plan';
+            badge.style.display = 'flex';
+          }
+        }
+
+        setTimeout(() => {
+          navigateToSection(matchedKey, false);
+        }, 350);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkCurrentRoute);
+    } else {
+      checkCurrentRoute();
+    }
+    window.addEventListener('popstate', checkCurrentRoute);
+
     function togglePricingFeatures(btn) {
       const parent = btn.closest('.pricing-dropdown-wrap');
       const moreFeatures = parent.querySelector('.pricing-dropdown-features');
